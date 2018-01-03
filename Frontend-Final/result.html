@@ -1,0 +1,57 @@
+<html>
+<head><title>PathFinder</title>
+<style>
+body { background-color:black;
+ color:white;
+ font-size:40px;
+font-family:sans-serif;
+}
+.paras
+{ 
+  background-color:white;
+ color:black;
+margin-top:10px;
+text-align:center;
+width:100%;
+height:auto;
+font-size:30px;
+font-family:sans-serif;
+padding:5px 5px 5px 5px;
+border: 2px solid gray;
+}
+
+a{ text-decoration:none;
+}
+.chc2 { border-radius:5%;
+  background-color:#86F9DA;
+ color:white;
+width:15%;
+margin-top:40px;
+  height:10%;
+font-size:40px;
+ 
+}
+</style>
+
+
+   <body>
+    <center> <h1>WORD LADDER SOLVER </h1>
+          {% if (res2==1)%}
+               {% for i in res1 %}
+             
+                <p name="paras">{{i}}</p>
+               
+            
+               {% endfor %}
+
+          {% endif %}
+      {% if res2==-1 %}
+         <p class="paras">NO PATH!</p>
+          {% endif %}
+       {% if res2==0 %}
+         <p class="paras">WORDS DO NOT EXIST</p>
+          {% endif %}
+ <a href="http://127.0.0.1:5000/"><input type="button" class="chc2" value="Play Again"/></a>
+  </center>
+     </body>
+</html>

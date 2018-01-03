@@ -1,0 +1,345 @@
+<html>
+<head><title>WORD LADDERS</title>
+<style>
+body { background-color:black;
+ color:white;
+ font-size:50px;
+font-family:sans-serif;
+}
+.divs{  
+margin-top:200px;
+margin-left:500px;
+background-color:#5CDFF3;
+ color:black;
+font-size:40px;
+width:50%;
+height:auto;
+font-family:sans-serif;
+padding:5px 5px 5px 5px;
+border: 2px solid gray;
+}
+.para{
+color:#86F9DA;
+text-align:center;
+width:100%;
+height:auto;
+margin-top:40px;
+font-size:40px;
+font-family:sans-serif;
+padding:5px 5px 5px 5px;
+
+}
+.paras
+{ margin-left:90px;
+  background-color:white;
+ color:black;
+margin-top:30px;
+text-align:center;
+width:80%;
+height:auto;
+font-size:30px;
+font-family:sans-serif;
+padding:5px 5px 5px 5px;
+border: 2px solid gray;
+}
+
+.chc { border-radius:5%;
+margin-left:20px;
+  background-color:#86F9DA;
+ color:black;
+width:10%;
+  height:5%;
+font-size:20px;
+ 
+}
+.chc2 { border-radius:5%;
+margin-left:750px;
+  background-color:#86F9DA;
+ color:black;
+width:15%;
+margin-top:40px;
+  height:10%;
+font-size:40px;
+ 
+}
+.ch{  
+      border-radius:15%;
+  background-color:white;
+  width:30%;
+  height:20%;
+font-size:40px;
+ color:black;
+}
+.chs
+{   border-radius:100%;
+  background-color:white;
+  width:20%;
+  height:20%;
+font-size:30px;
+ color:black;
+}
+#hin
+{ font-size:30px;
+  width:90%;
+  height:auto;
+  text-align:center;
+  margin-top:30px;
+  margin-left:30px;
+}
+
+#inputts
+{  margin-top:30px;
+   margin-left:600px;
+height:auto;
+font-size:30px;
+background-color:white;
+ color:black;
+font-family:sans-serif;
+}
+
+
+.inputts{
+margin-top:30px;
+margin-left:10px;
+height:auto;
+font-size:30px;
+background-color:white;
+ color:black;
+font-family:sans-serif;
+}
+
+#divv3{
+padding:5px 5px 5px 5px;
+margin-left:430px;
+  background-color:#86F9DA;
+ color:black;
+border:5px solid gray;
+
+}
+#divv8{
+padding:5px 5px 5px 5px;
+margin-left:5px;
+margin-top:30px;
+text-align:center;
+  background-color:#86F9DA;
+ color:black;
+border:5px solid gray;
+
+}
+.paraas{
+padding:5px 5px 5px 5px;
+font-size:30px;
+margin-left:20px;
+margin-top:10px;
+  background-color:black;
+ color:white;
+
+
+}
+
+.links{
+color:white;
+font-size:30px;
+width:10%
+height:auto;
+text-align:center;
+margin-top:5px;
+
+}
+
+#checpp
+{border-radius:15%;
+margin-top:20px;
+margin-left:330px;
+  background-color:black;
+  width:30%;
+  height:7%;
+font-size:20px;
+ color:white;
+}
+</style>
+
+<script>
+ function howto()
+{
+  var div1=document.createElement("div");
+  div1.id="divv8";
+  div1.innerHTML="RULES OF THE GAME";
+
+  var p1=document.createElement("p");
+  p1.className="paraas";
+  p1.innerHTML=" Word Ladders is a game where you go from one word to another by swapping/deleting/inserting one letter at a time. The words can be of lengths ranging from THREE TO SEVEN LETTERS. The intermediate words must be valid! Try finding the shortest path! \
+Click PLAY THE GAME! to have the computer generate two words for you, which you can solve as a puzzle.\
+Click WORD LADDER SOLVER, to find the shortest path between two words which you can specify!";
+  
+div1.appendChild(p1);
+document.body.appendChild(div1);
+
+}
+
+
+
+function hardlvl()
+{
+ inter={{leng}};  
+ lst2="{{ll}}";
+  lst=lst2.split(" ");
+  neww=1;
+  //alert(lst[0]);
+  //alert(lst[1]);
+  //alert(lst[inter-1]);
+  var div1=document.createElement("div");
+  div1.id="divv1";
+  div1.className="divs";
+  div1.style.border="1px solid black";
+
+  var p1=document.createElement("p");
+  p1.className="paras";
+  p1.innerHTML="START WORD: "+ "{{x[0]}}";
+
+  var p2=document.createElement("p");
+  p2.className="paras";
+  p2.innerHTML="END WORD: "+"{{x[1]}}";
+  div1.appendChild(p1);
+  div1.appendChild(p2);
+  document.body.appendChild(div1);
+
+  var div2=document.createElement("div");
+  div2.id="divv2";
+  var p3=document.createElement("p");
+  var inp=document.createElement("input");
+  p3.className="para";
+  p3.innerHTML="MAKE THE WORD BRIDGE!";
+  inp.type="text";
+  inp.id="inputts";
+  inp.placeholder="Guess the next word!";
+  var chec=document.createElement("input");
+   chec.className="chc";
+  chec.type="button";
+  chec.value="Check";
+  chec.onclick=checkk;
+
+var gp=document.createElement("input");
+  gp.type="button";
+  gp.className="chc2";
+  gp.value="GIVE UP";
+  gp.onclick=giveup;
+
+  var hintbut=document.createElement("p");
+  hintbut.id="hin";
+  hintbut.className="hintt";
+  hintbut.innerHTML="HINT:";
+  hintbut.style.border="1px solid black";
+  div2.appendChild(p3);
+   div2.appendChild(inp);
+div2.appendChild(chec);
+div2.appendChild(hintbut);
+div2.appendChild(gp);
+document.body.appendChild(div2);
+}
+
+function giveup()
+{  var hintbut=document.getElementById("hin");
+  var div2=document.getElementById("divv2");
+
+ while(neww<inter)
+   { 
+
+    var linked=document.createElement("p");
+      linked.className="links";	
+      linked.innerHTML=lst[neww];
+      div2.appendChild(linked);
+      neww=neww+1;
+   }
+   var playagain=document.createElement("input");
+   playagain.type="button";
+   playagain.className="chc2";
+   playagain.value="PLAY AGAIN!";
+   playagain.onclick=reloadd; 
+   div2.appendChild(playagain);
+}
+
+ function checkk()
+{ var c= document.getElementById("inputts").value;
+  //alert(c);
+//alert(lst[neww]);
+  var hintbut=document.getElementById("hin");
+  var div2=document.getElementById("divv2");
+  if((c==lst[inter-1])&&(neww==inter-1))
+ { alert("YOU HAVE WON!");
+   var playagain=document.createElement("input");
+   playagain.type="button";
+   playagain.value="PLAY AGAIN!";
+   playagain.onclick=reloadd; 
+   div2.appendChild(playagain);
+   }
+  if(c==lst[neww])
+    { var linked=document.createElement("p");
+      linked.className="links";
+      linked.innerHTML=c;
+      neww=neww+1;
+      hintbut.innerHTML="You have guessed right! ";
+      div2.appendChild(linked);}
+  else
+
+      if((lst[neww-1].length)<(lst[neww].length))
+			{ hintbut.innerHTML="HINT: Try again! Add a letter!";}
+  else
+   if((lst[neww-1].length)>(lst[neww].length))
+			{ hintbut.innerHTML="HINT: Try again! Delete a letter!";}
+    else
+			{ hintbut.innerHTML="HINT: Try again! Change a letter!";}
+      
+     
+ 
+}
+
+function reloadd()
+{  location.reload();
+
+}
+
+function solver()
+{  var div1=document.createElement("div");
+  div1.id="divv3";
+  div1.className="divs";
+   var frm=document.createElement("form");
+  frm.id="formm";
+  frm.action = "http://localhost:5000/result"
+  frm.setAttribute("method","POST");
+  var stw= document.createElement("input");
+  stw.type="text";
+  stw.className="inputts";
+  stw.setAttribute("name","start");
+  stw.placeholder="Input Start Word";
+  var enw= document.createElement("input");
+  enw.type="text";
+  enw.className="inputts";
+  enw.setAttribute("name","end");
+  enw.placeholder="Input End Word";
+  var checp=document.createElement("input");
+  checp.type="submit";
+  checp.value="Find Path";
+  checp.id="checpp";
+   frm.appendChild(stw);
+   frm.appendChild(enw);
+    frm.appendChild(checp);
+  div1.appendChild(frm);
+  document.body.appendChild(div1);
+}
+
+</script>
+
+
+
+</head>
+<body>
+<center><p><H1>WELCOME TO WORD LADDERS!</H1></p></center>
+
+<center><input type = "button" name = "lvl1" value="PLAY THE GAME!" class="ch" onclick="hardlvl()"/></center>
+        <p>
+	<center><input type = "button" name = "solver" value="WORD LADDER SOLVER" class="ch" onclick="solver()"/><center>
+	</p>
+<center>   <input type = "button" name = "hw" value="HOW TO PLAY" class="chs" onclick="howto()"/>   </center>
+</body>
+</html>
